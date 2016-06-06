@@ -1,0 +1,93 @@
+	
+
+MOV A, 5 				;¬¬≈ƒ»“≈ ◊»—ÀŒ 		
+MOV B, 1
+CMP A, 6
+JAE FALSE	
+CMP A, 0
+JZ FALSE
+CALL PROGRAM
+HLT
+PROGRAM:
+	push A
+	ADD A,48
+	MOV [232],A
+	POP A	
+	MOV [233],33
+	MOV [234],61
+	POP B
+	MOV D,49
+	MOV B,235
+	MOV C,236 
+	PUSH A     
+.loop:
+	MOV [B],D
+	MOV [C],42
+	DEC A
+	JZ finish
+	INC D
+	ADD B,2
+	ADD C,2
+	JMP .loop	
+finish:
+	MOV [C],61
+	POP A
+	MOV B, 1
+	CALL PODPROGRAMMA
+	HLT
+FALSE:
+	CALL error
+hello: 
+	DB "error"
+       	DB 0
+error:
+	MOV C, hello
+	MOV D, 232
+	MOV B, 0
+error1:
+	MOV A, [C]
+	MOV [D], A
+	INC C
+	INC D
+	CMP B, [C]
+	JNZ error1
+	HLT
+
+PODPROGRAMMA:
+	MOV C, A
+	MOV B, C			;«¿ƒ¿Õ»≈ 6
+	MOV A, 1
+	FACTORIAL:
+	MUL B
+	SUB B, 1
+	CMP B, 0
+	JNE FACTORIAL
+	MOV B, 0
+	MOV C, 0
+	MOV D, 0
+ 	CALL podprog
+podprog:
+	MOV D, 250 			;«¿ƒ¿Õ»≈ 5																
+	PUSH a
+	DIV 100
+	MOV B, a
+	ADD B, 48
+	MOV [D], B
+	MUL 100
+	POP B
+	SUB B, A
+	PUSH B
+	MOV A, B
+	DIV 10
+	MOV B, a
+	ADD B, 48
+	INC D
+	MOV [D], B
+	MUL 10
+	POP B 
+	SUB B, a
+	ADD B, 48 
+	INC D
+	MOV [D], B
+	HLT
+	

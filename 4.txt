@@ -1,0 +1,15 @@
+JMP start
+data: 
+	DB "19.09" 
+ 	DB 0	
+start:
+	MOV C, data    
+	MOV D, 232	
+.loop:
+	MOV A, [C]	
+	MOV [D], A	
+	INC C
+	INC D  
+	CMP B, [C]	
+	JNE .loop
+      	HLT	

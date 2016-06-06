@@ -1,0 +1,8 @@
+JMP start
+	DB 19 
+	DB 09	
+
+start:
+	MOV A, 19    
+	MOV B, 09	
+	ADD A, B

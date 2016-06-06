@@ -1,0 +1,5 @@
+
+MOV A, 19
+MOV B, 09
+PUSH A
+PUSH B

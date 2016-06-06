@@ -1,0 +1,26 @@
+CALL podprog
+HLT
+podprog:
+	MOV A, 255
+	MOV D, 232
+	PUSH A
+	DIV 100
+	MOV B, A
+	ADD B, 48
+	MOV [D], B
+	MUL 100
+	POP B
+	SUB B, A
+	PUSH B
+	MOV A, B
+	DIV 10
+	MOV B, A
+	ADD B, 48
+	INC D
+	MOV [D], B
+	MUL 10
+	POP B 
+	SUB B, a
+	ADD B, 48 
+	INC D
+	MOV [D], B
